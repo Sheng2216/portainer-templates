@@ -1615,8 +1615,8 @@
         "Other"
       ],
       "description": "Docker Registry is a stateless, highly scalable server side application that stores and lets you distribute Docker images.",
-      "post_up_info":"The default bind-mounted storage location for Registry is /mnt/registry on the host.\nQuick reference:\n1. Pull(or build some image from the hub, e.g., ubuntu)\ndocker pull ubuntu\n2. Tag the image so that it points to your registry\ndocker image tag ubuntu localhost:5000/myfirstimage\n3. Push it\ndocker push localhost:5000/myfirstimage\n4. Pull it back\n docker pull localhost:5000/myfirstimage ",
-      "note": "Check <a href='https://hub.docker.com/_/registry'>Docker Registry dockerhub overview page</a> for more details.<br>Read <a href='https://docs.docker.com/registry/deploying/'>the section regarding deployment</a> to see more complex use cases.<br>The default bind-mounted storage location for Registry is /mnt/registry on the host.",
+      "post_up_info":"Quick reference:\n1. Pull(or build some image from the hub, e.g., ubuntu)\ndocker pull ubuntu\n2. Tag the image so that it points to your registry\ndocker image tag ubuntu localhost:5000/myfirstimage\n3. Push it\ndocker push localhost:5000/myfirstimage\n4. Pull it back\n docker pull localhost:5000/myfirstimage ",
+      "note": "Check <a href='https://hub.docker.com/_/registry'>Docker Registry dockerhub overview page</a> for more details.<br>Read <a href='https://docs.docker.com/registry/deploying/'>the section regarding deployment</a> to see more complex use cases.",
       "image": "registry:latest",
       "logo": "https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png",
       "name": "Registry",
@@ -1646,12 +1646,6 @@
       ],
       "ports": [
         "5000:5000"
-      ],
-      "volumes": [
-        {
-          "bind": "/mnt/registry",
-          "container": "/var/lib/registry/"
-        }
       ]
     }
   ]
