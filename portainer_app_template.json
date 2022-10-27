@@ -1647,6 +1647,55 @@
       "ports": [
         "5000:5000"
       ]
+    },
+    {
+      "categories": [
+        "Database"
+      ],
+      "description": "Azure SQL Edge is an optimized relational database engine geared for IoT and IoT Edge deployments. It provides capabilities to create a high-performance data storage and processing layer for IoT applications and solutions.",
+      "post_up_info":"Quick reference:\nPlease check https://learn.microsoft.com/en-us/azure/azure-sql-edge/disconnected-deployment for detailed instructions.\nMake sure you changed the SA password afte deployment.",
+      "note": "Check the instructions <a href='https://learn.microsoft.com/en-us/azure/azure-sql-edge/disconnected-deployment'>Deploy Azure SQL Edge with Docker</a> for more details.<br>Make sure you changed the SA password afte deployment.",
+      "env": [
+        {
+          "default": "1000",
+          "label": "PUID",
+          "name": "PUID"
+        },
+        {
+          "default": "100",
+          "label": "PGID",
+          "name": "PGID"
+        },
+        {
+          "default": "Europe/London",
+          "label": "Time Zone",
+          "name": "TZ"
+        },
+        {
+          "default": "Y",
+          "label": "Accept the End-User Licensing Agreement",
+          "name": "ACCEPT_EULA",
+          "description": "Set the ACCEPT_EULA variable to any value to confirm your acceptance of the End-User Licensing Agreement. Required setting for the Azure SQL Edge image."
+        },
+        {
+          "default": "yourStrong(!)Password",
+          "label": "Initial strong password for SQL SA account.",
+          "name": "MSSQL_SA_PASSWORD",
+          "description": "Strong password that is at least 8 characters and meets the Azure SQL Edge password requirements, you need to change it manually after deployment."
+        }
+      ],
+      "logo": "https://raw.githubusercontent.com/RAKWireless/portainer-templates/master/logo/azuresqledge_logo.svg",
+      "name": "AzureSqlEdge",
+      "platform": "linux",
+      "repository": {
+        "stackfile": "Stack/AzureSQLEdge/azuresqledge.yml",
+        "url": "https://github.com/Sheng2216/portainer-templates"
+      },
+      "title": "Azure SQL Edge",
+      "type": 3
     }
   ]
 }
+
+
+
