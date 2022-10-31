@@ -1684,7 +1684,7 @@
           "description": "Strong password that is at least 8 characters and meets the Azure SQL Edge password requirements, you need to change it manually after deployment."
         }
       ],
-      "logo": "https://raw.githubusercontent.com/RAKWireless/portainer-templates/master/logo/azuresqledge_logo.svg",
+      "logo": "https://raw.githubusercontent.com/RAKWireless/portainer-templates/master/logo/azuresqledge_logo.png",
       "name": "AzureSqlEdge",
       "platform": "linux",
       "repository": {
