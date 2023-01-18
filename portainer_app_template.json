@@ -1737,8 +1737,8 @@
           "Other"
         ],
         "description": "AWS IoT Greengrass is an open-source edge runtime and cloud service that helps you build, deploy, and manage intelligent device software.",
-        "post_up_info": "Browse to http://{host-ip}/:8080 to access the web interface.\nCheck https://openplcproject.com/docs/openplc-overview/ for Open PLC official documentations.\nDefault username: openplc\nDefault password: openplc",
-        "note": "Browse to <a herf='http://{host-ip}/:8080'>http://{host-ip}:8080</a> to access the web interface.<br>Check <a href='https://openplcproject.com/docs/openplc-overview/'>Open PLC official documentations</a> for more details.<ulstyle='padding-left:20px'><li>Default username: openplc</li><li>Default password: openplc</li>",
+        "post_up_info": "Browse to https://docs.aws.amazon.com/greengrass/v2/developerguide/getting-started.html to check references",
+        "note": "Browse to https://docs.aws.amazon.com/greengrass/v2/developerguide/getting-started.html to check references",
         "image": "sheng2216/aws-iot-greengrasss:2.5.4-rakwireless",
         "logo": "https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_60,h_60/https://dashboard.snapcraft.io/site_media/appmedia/2020/05/AWS-IoT-Greengrass4x.png",
         "name": "AWSIoTGreengrass",
