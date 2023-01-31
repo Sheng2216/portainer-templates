@@ -1737,14 +1737,19 @@
           "Other"
         ],
         "description": "AWS IoT Greengrass is an open-source edge runtime and cloud service that helps you build, deploy, and manage intelligent device software.",
-        "post_up_info": "Browse to https://docs.aws.amazon.com/greengrass/v2/developerguide/getting-started.html to check references",
-        "note": "Browse to https://docs.aws.amazon.com/greengrass/v2/developerguide/getting-started.html to check references",
-        "image": "sheng2216/aws-iot-greengrasss:2.5.4-rakwireless",
+        "post_up_info": "Please mount the folder that contains your AWS security credentials by filling in the AWS credentials path section.\nYou can remove the credential file from the host computer after you start the AWS IoT Greengrass container.\nCheck https://docs.aws.amazon.com/greengrass/v2/developerguide/run-greengrass-docker-automatic-provisioning.html#configure-aws-credentials-for-docker for the AWS IoT Greengrass Developer Guide.\nFor more information, check the offical Github repository at https://github.com/aws-greengrass/aws-greengrass-docker.",
+        "note": "Please mount the folder that contains your AWS security credentials by filling in the <strong>AWS credentials path</strong> section.<br>You can remove the credential file from the host computer after you start the AWS IoT Greengrass container.<br>Check <a href='https://docs.aws.amazon.com/greengrass/v2/developerguide/run-greengrass-docker-automatic-provisioning.html#configure-aws-credentials-for-docker'>AWS IoT Greengrass Developer Guide</a>.<br>For more information, check <a href='https://github.com/aws-greengrass/aws-greengrass-docker'> offical Github repository</a>.", 
         "logo": "https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_60,h_60/https://dashboard.snapcraft.io/site_media/appmedia/2020/05/AWS-IoT-Greengrass4x.png",
         "name": "AWSIoTGreengrass",
         "title": "AWS IoTG reengrass",
         "network": "bridge",
         "platform": "linux",
+        "type": 3,
+        "restart_policy": "unless-stopped",
+        "repository": {
+          "stackfile": "Stack/AWSIoTGreengrass/awsiotgreengrass.yml",
+          "url": "https://github.com/Sheng2216/portainer-templates"
+        },
         "env": [
           {
             "default": "1000",
@@ -1760,18 +1765,66 @@
             "default": "Europe/London",
             "label": "Time Zone",
             "name": "TZ"
-          },         
+          },  
           {
-            "label": "AWS_ACCESS_KEY_ID",
-            "name": "AWS_ACCESS_KEY_ID"
+            "default": "/tmp/greengrass-v2-credentials",
+            "label": "AWS credentials path",
+            "name": "AWS_CREDENTIALS_PATH",
+            "description": "Geerated at your AWS console. When you run the Docker image, you must mount the folder that contains this credential file to /root/.aws/ in the Docker container."
           },
           {
-            "label": "AWS_SECRET_ACCESS_KEY",
-            "name": "AWS_SECRET_ACCESS_KEY"
+            "default": "/greengrass/v2",
+            "label": "GGC_ROOT_PATH",
+            "name": "GGC_ROOT_PATH",
+            "description":"The Greengrass root folder that you want to use for installation."
+          },
+          {
+            "default": "us-east-1",
+            "label": "AWS_REGION",
+            "name": "AWS_REGION",
+            "description":"The AWS Region where you created the resources."
+          },
+          {
+            "default": true,
+            "select": [
+              {
+                "text": "true",
+                "value": "true"
+              },
+              {
+                "text": "false",
+                "value": "false"
+              }
+            ],
+            "label": "PROVISION",
+            "name": "PROVISION"
+          },
+          {
+            "default": "MyGreengrassCore",
+            "label": "THING_NAME",
+            "name": "THING_NAME"
+          },
+          {
+            "default": "MyGreengrassCoreGroup",
+            "label": "THING_GROUP_NAME",
+            "name": "THING_GROUP_NAME"
+          },
+          {
+            "default": "GreengrassV2TokenExchangeRole",
+            "label": "TES_ROLE_NAME",
+            "name": "TES_ROLE_NAME"
+          },
+          {
+            "default": "GreengrassCoreTokenExchangeRoleAlias",
+            "label": "TES_ROLE_ALIAS_NAME",
+            "name": "TES_ROLE_ALIAS_NAME"
+          },
+          {
+            "default": "ggc_user:ggc_group",
+            "label": "COMPONENT_DEFAULT_USER",
+            "name": "COMPONENT_DEFAULT_USER"
           }
-        ],
-        "restart_policy": "unless-stopped",
-        "type": 1
+        ]
       }
     ]
   }
