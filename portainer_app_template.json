@@ -1785,7 +1785,7 @@
             "description":"The AWS Region where you created the resources."
           },
           {
-            "default": true,
+            "default": "true",
             "select": [
               {
                 "text": "true",
